@@ -14,6 +14,7 @@ public:
 	magasin(int nb_produit_);
 	void addProduit(produit *prod1);
 	produit* getProduit(int n);
+	void displayProduit();
 private:
 	int nb_produit;
 	vector<produit*> m_produit;
