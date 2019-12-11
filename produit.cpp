@@ -39,3 +39,4 @@ void produit::setQuantite(int newQuantite){
 void produit::setPrix(float newPrix){
 	prix=newPrix;
 }
+
