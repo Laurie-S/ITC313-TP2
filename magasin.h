@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "produit.h"
 
 
 using namespace std;
@@ -10,10 +11,12 @@ using namespace std;
 
 class magasin {
 public:
-	magasin();
-
+	magasin(int nb_produit_);
+	void addProduit(produit *prod1);
+	produit* getProduit(int n);
 private:
-	//vector<produit*> m_produit;
+	int nb_produit;
+	vector<produit*> m_produit;
 	//vector<client*> m_client;
 	//vector<commande*> m_commande;
 
