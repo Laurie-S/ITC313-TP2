@@ -24,4 +24,8 @@ int main(){
 
 	magasin1.displayProduitChoisi("Wii");
 	magasin1.displayProduitChoisi("PS1");
+
+	magasin1.modifQuantite("PS4", 100);
+
+	magasin1.displayProduit();
 }

@@ -17,6 +17,8 @@ public:
 	void displayProduit();
 	void displayProduitChoisi(string prod_s);
 	int findProduct(string prod_s);
+	void modifQuantite(string prod_s, int newQuantite);
+
 private:
 	int nb_produit;
 	vector<produit*> m_produit;

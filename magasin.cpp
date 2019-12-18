@@ -43,7 +43,7 @@ ostream& operator << (ostream &output, produit prod1) {
 	return output; 
 }
 
-magasin::magasin(int nb_produit_ = 0){
+magasin::magasin(int nb_produit_ = 0){ // pour pouvoir creer un magasion vide
 	nb_produit=nb_produit_;
 }
 
@@ -72,7 +72,7 @@ void magasin::displayProduit(){
 
 void magasin::displayProduitChoisi(string prod_s){
 	int j = findProduct(prod_s);
-	
+
 	if(j>m_produit.size()){
 		cout << "produit " << prod_s << " non trouve" << endl << endl;
 	}
@@ -100,3 +100,17 @@ int magasin::findProduct(string prod_s){
 	}
 	return n+1;
 }
+
+void magasin::modifQuantite(string prod_s, int newQuantite){
+	int j = findProduct(prod_s);
+
+	if(j>m_produit.size()){
+		cout << "produit " << prod_s << " non trouve" << endl << endl;
+	}
+	else{
+		produit *prod1=m_produit.at(j);
+		prod1->setQuantite(newQuantite);
+	}
+}
+
+
