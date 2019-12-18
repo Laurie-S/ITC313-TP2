@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include "produit.h"
+#include "commande.h"
 
 
 using namespace std;
@@ -23,7 +24,7 @@ private:
 	int nb_produit;
 	vector<produit*> m_produit;
 	//vector<client*> m_client;
-	//vector<commande*> m_commande;
+	vector<commande*> m_commande;
 
 };
 

@@ -13,6 +13,9 @@ using namespace std;
 class commande {
 public:
 	commande(/*client client1,*/ bool status_commande = false );
+	int tailleProd();
+	void addProduit(produit prod1);
+	produit getProduit(int i);
 
 private:
 	//client client1_;
