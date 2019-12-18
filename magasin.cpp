@@ -71,18 +71,9 @@ void magasin::displayProduit(){
 }
 
 void magasin::displayProduitChoisi(string prod_s){
-	int j, n=m_produit.size();
-	bool trouve = false;
-
-	for(int i =0; i<n ; i++){
-		produit prod1 = *m_produit.at(i);
-		if(prod1.getTitre()==prod_s){
-			trouve=true;
-			j=i;
-			i=n;
-		}
-	}
-	if(trouve==false){
+	int j = findProduct(prod_s);
+	
+	if(j>m_produit.size()){
 		cout << "produit " << prod_s << " non trouve" << endl << endl;
 	}
 	else{
@@ -98,3 +89,14 @@ void magasin::displayProduitChoisi(string prod_s){
 	}
 }
 
+int magasin::findProduct(string prod_s){
+	int n=m_produit.size();
+
+	for(int i =0; i<n ; i++){
+		produit prod1 = *m_produit.at(i);
+		if(prod1.getTitre()==prod_s){
+			return i;
+		}
+	}
+	return n+1;
+}

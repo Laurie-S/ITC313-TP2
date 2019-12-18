@@ -16,6 +16,7 @@ public:
 	produit* getProduit(int n);
 	void displayProduit();
 	void displayProduitChoisi(string prod_s);
+	int findProduct(string prod_s);
 private:
 	int nb_produit;
 	vector<produit*> m_produit;
