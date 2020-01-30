@@ -21,3 +21,17 @@ int commande::tailleProd(){
 produit commande::getProduit(int i){
 	return produit_.at(i);
 }
+
+ostream& operator << (ostream &out, commande *com1) {
+	out << " ____________________________________________________________________________" << endl;
+	out << "|  COMMANDE                                                                  |" << endl;
+	out << "|----------------------------------------------------------------------------|" << endl;
+	out << "| Nom du client " << /* get nom client */"                                   |" << endl;
+	out << "|----------------------------------------------------------------------------| " << endl;
+	for(int i=0;i<com1->tailleProd();i++){
+		produit prod1=com1->getProduit(i);
+		out << &prod1;
+	}
+	out << endl << endl;
+	return out; 
+}

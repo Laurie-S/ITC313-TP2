@@ -17,6 +17,8 @@ public:
 	void addProduit(produit prod1);
 	produit getProduit(int i);
 
+	friend ostream& operator<<(ostream &out, produit *commande);
+
 private:
 	//client client1_;
 	vector<produit> produit_;
