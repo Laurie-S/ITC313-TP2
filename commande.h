@@ -18,7 +18,9 @@ public:
 	void addProduit(produit prod1);
 	produit getProduit(int i);
 	client getClient();
-	
+	void livre();
+	bool getStatus();
+
 	friend ostream& operator<<(ostream &out, commande *com1);
 
 private:

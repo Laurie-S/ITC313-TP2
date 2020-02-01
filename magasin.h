@@ -29,6 +29,9 @@ public:
 	void addProduitClient(client clie, produit prod, int Quant);
 	void supProduitClient(client clie, produit prod);
 	int getQuantiteProdClient(client clie, produit prod);
+	void validerCommande(client cli,commande *comm);
+	void livre(client *cli);
+	void addCommande(commande *comm);
 
 
 private:

@@ -12,7 +12,7 @@ int main(){
 	produit PS4("PS4","console de SONY",18, 299.99000 );
 	produit PS3("PS3","console de SONY",8, 120.990000 );
 	produit Switch("Switch","console de Nintendo",654, 399.90000 );
-	produit Wii("Wii","console de Nintendo",2, 90 );
+	produit Wii("Wii","console de Nintendo",80, 90 );
 	magasin1.addProduit(&PS4);
 	magasin1.addProduit(&PS3);
 	magasin1.addProduit(&Switch);
@@ -59,5 +59,20 @@ int main(){
 	magasin1.supProduitClient(client2, PS4);
 	cout << (&client2) << endl;
 
-	magasin1.displayClient();
+
+	magasin1.addProduitClient(client2, PS4, 5);
+	magasin1.addProduitClient(client2, PS3, 2);
+	magasin1.addProduitClient(client2, PS3, 3);
+	magasin1.addProduitClient(client2, Wii, 19);
+	magasin1.addProduitClient(client2, Switch, 18);
+	cout << (&client2) << endl;
+vector<produit> v;
+commande AAA(client2,v);
+	magasin1.validerCommande(client2,&AAA);
+	magasin1.livre(&client2);
+
+	cout <<&AAA;
+	
+
+
 }

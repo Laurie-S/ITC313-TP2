@@ -17,6 +17,14 @@ client commande::getClient(){
 	return client1_;
 }
 
+void commande::livre(){
+	statusCommande_=true;
+}
+
+bool commande::getStatus(){
+	return statusCommande_;
+}
+
 int commande::tailleProd(){
 	return produit_.size();
 }
@@ -32,7 +40,7 @@ ostream& operator << (ostream &out, commande *com1) {
 	out << "|  COMMANDE                                                                  |" << endl;
 	out << "|----------------------------------------------------------------------------|" << endl;
 	out << "| Nom du client : " << client1.getNom();
-	n=66-((client1.getNom()).size() + (client1.getPrenom()).size());
+	n=65-((client1.getNom()).size() + (client1.getPrenom()).size());
 	for (int i =0; i<n; i++){
 		out << " ";
 	}
@@ -42,6 +50,15 @@ ostream& operator << (ostream &out, commande *com1) {
 	for(int i=0;i<com1->tailleProd();i++){
 		produit prod1=com1->getProduit(i);
 		out << &prod1;
+	}
+	bool statut = com1->getStatus();
+	if (statut==false){
+		out << "|----------------------------------------------------------------------------| " << endl;
+		out << "| En cours de livraison                                                      |" << endl;
+	}
+	else{
+		out << "|----------------------------------------------------------------------------| " << endl;
+		out << "| Livré                                                                      |" << endl;
 	}
 	out << "|____________________________________________________________________________|" << endl;
 

@@ -8,7 +8,7 @@
 
 using namespace std;
 
-magasin::magasin(int nb_produit_ = 0){ // pour pouvoir creer un magasion vide
+magasin::magasin(int nb_produit_ = 0){ // pour pouvoir creer un magasin vide
 	nb_produit=nb_produit_;
 }
 
@@ -257,5 +257,36 @@ void magasin::supProduitClient(client clie, produit prod){
 	}
 	if(n==0){
 		cout << "Client introuvable" << endl << " Veuillez ajouter le client avant d'ajouter un produit " << endl << endl;
+	}
+}
+
+void magasin::validerCommande(client cli, commande *comm){
+	client cli2= findClient(cli.getId());
+	vector<produit> v = cli.getPanier();
+	for (int i = 0; i < v.size(); i++)
+	{
+		comm->addProduit(v.at(i));
+	}
+	addCommande(comm);
+	cli2.videPanier();
+	cout << "Commande Valide " << endl << "Compte rendu de la commande : " << endl; 
+
+	cout << comm << endl; 
+}
+
+void magasin::addCommande(commande *comm){
+	m_commande.push_back(comm);
+}
+
+void magasin::livre(client *cli){
+	for (int i = 0; i < m_commande.size(); ++i)
+	{
+		client cl=m_commande.at(i)->getClient();
+		if(cl.getId()==cli->getId()){
+			if(m_commande.at(i)->getStatus()==false){
+				m_commande.at(i)->livre();
+				cout << "Commande livre avec succes " << endl;
+			}
+		}
 	}
 }
