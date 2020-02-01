@@ -39,20 +39,29 @@ int main(){
 
 	cout << &client1 << endl;
 
+vector<produit> v;
 
 	magasin1.addProduitClient(client1, PS4, 50);
 	magasin1.displayProduit();
+	commande ABA(client1,v);
+	magasin1.validerCommande(client1,&ABA);
+	magasin1.livre(&client1);
 
 	cout << (&client1) << endl;
 
 
 	magasin1.addProduitClient(client2, PS4, 12);
 	cout << (&client2) << endl;
+
 	magasin1.addProduitClient(client2, PS4, 5);
 	magasin1.addProduitClient(client2, PS3, -2);
 	magasin1.addProduitClient(client2, PS3, 2);
 	magasin1.addProduitClient(client2, PS3, 0);
 	magasin1.addProduitClient(client2, Switch, 18);
+	commande ABB(client2,v);
+	magasin1.validerCommande(client2,&ABB);
+	magasin1.livre(&client2);
+
 	cout << (&client2) << endl;
 	magasin1.supProduitClient(client2, Switch);
 	cout << (&client2) << endl;
@@ -66,13 +75,13 @@ int main(){
 	magasin1.addProduitClient(client2, Wii, 19);
 	magasin1.addProduitClient(client2, Switch, 18);
 	cout << (&client2) << endl;
-vector<produit> v;
+
 commande AAA(client2,v);
 	magasin1.validerCommande(client2,&AAA);
 	magasin1.livre(&client2);
 
 	cout <<&AAA;
 	
-
+magasin1.displayCommandes();
 
 }

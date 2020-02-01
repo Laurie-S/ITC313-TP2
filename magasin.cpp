@@ -290,3 +290,12 @@ void magasin::livre(client *cli){
 		}
 	}
 }
+
+void magasin::displayCommandes(){
+	cout << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl;
+	cout << "AFFICHAGE DE TOUTES LES COMMANDES DU MAGASIN" << endl;
+	for (int i = 0; i < m_commande.size(); ++i)
+	{
+		cout << m_commande.at(i);
+	}
+}

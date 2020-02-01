@@ -32,6 +32,7 @@ public:
 	void validerCommande(client cli,commande *comm);
 	void livre(client *cli);
 	void addCommande(commande *comm);
+	void displayCommandes();
 
 
 private:

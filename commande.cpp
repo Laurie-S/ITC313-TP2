@@ -40,7 +40,7 @@ ostream& operator << (ostream &out, commande *com1) {
 	out << "|  COMMANDE                                                                  |" << endl;
 	out << "|----------------------------------------------------------------------------|" << endl;
 	out << "| Nom du client : " << client1.getNom();
-	n=65-((client1.getNom()).size() + (client1.getPrenom()).size());
+	n=59-(client1.getNom()).size();
 	for (int i =0; i<n; i++){
 		out << " ";
 	}
