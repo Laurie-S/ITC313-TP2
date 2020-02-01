@@ -5,11 +5,7 @@ CXXFLAGS   = -Wall -Wextra -std=c++11
 DEPFLAGS   = -MMD
 LDFLAGS    = 
 # Replace tp.cpp with the cpp files that need to be compiled
-<<<<<<< HEAD
-SRCS       = magasin.cpp magasin-main.cpp produit.cpp commande.cpp
-=======
 SRCS       = magasin.cpp magasin-main.cpp produit.cpp client.cpp commande.cpp
->>>>>>> Question3
 OBJS       = $(SRCS:.cpp=.o)
 # Replace tp_main with the name you want to give to your executable file
 TARGET     = magasin-test

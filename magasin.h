@@ -4,10 +4,7 @@
 #include <string>
 #include <vector>
 #include "produit.h"
-<<<<<<< HEAD
-=======
 #include "client.h"
->>>>>>> Question3
 #include "commande.h"
 
 
@@ -37,11 +34,7 @@ public:
 private:
 	int nb_produit;
 	vector<produit*> m_produit;
-<<<<<<< HEAD
-	//vector<client*> m_client;
-=======
 	vector<client*> m_client;
->>>>>>> Question3
 	vector<commande*> m_commande;
 
 };
