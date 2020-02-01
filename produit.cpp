@@ -40,3 +40,39 @@ void produit::setPrix(float newPrix){
 	prix=newPrix;
 }
 
+ostream& operator << (ostream &output, produit *prod) {
+	string titre = prod->getTitre(); 		// pour que chaque parametre soit au bon endroit lors de l'affichage
+	int n = titre.size();
+	n=13-n;
+	for(int i=0;i<n ;i++){
+		titre+=" ";
+	}
+	string desc = prod->getDescr();
+	n = desc.size();
+	n=35-n;
+	for(int i=0;i<n ;i++){
+		desc+=" ";
+	}
+	string quant = to_string(prod->getQuantite());
+	n = quant.size();
+	n=16-n;
+	for(int i=0;i<n ;i++){
+		quant+=" ";
+	}
+	string prix = to_string(prod->getPrix());
+	n = prix.size();			
+	for(int i=0;i<n ;i++){						//pour ne pas qu'il y ai trop de chiffre apres la virgule
+		if(prix[i]=='.'){
+			prix.resize(i+3);
+			i=n;
+		}
+	}
+	n = prix.size();
+	n=9-n;
+	for(int i=0;i<n ;i++){
+		prix+=" ";
+	}
+
+	output << "| " << titre << desc << quant << prix << "€ |" << endl;
+	return output; 
+}

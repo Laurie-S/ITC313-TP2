@@ -5,11 +5,6 @@
 
 using namespace std;
 
-ostream& operator << (ostream &output, produit prod1) {
-	output << prod1.getTitre() << " " << prod1.getDescr() << "          " << prod1.getQuantite() << "    " << prod1.getPrix() << "€" << endl;
-	return output; 
-}
-
 int main(void){
 	produit PS4("PS4","console de SONY",18, 299.99 );
 

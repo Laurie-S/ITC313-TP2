@@ -19,6 +19,9 @@ public:
 	void setQuantite(int newQuantite);
 	void setPrix(float newPrix);
 
+	friend ostream& operator<<(ostream &output, produit *prod);
+
+
 private:
 	string titre;
 	string description;
