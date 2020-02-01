@@ -21,6 +21,10 @@ public:
 
 	friend ostream& operator<<(ostream &output, produit *prod);
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> Question3
 private:
 	string titre;
 	string description;

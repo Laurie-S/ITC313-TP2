@@ -4,6 +4,10 @@
 #include <string>
 #include <vector>
 #include "produit.h"
+<<<<<<< HEAD
+=======
+#include "client.h"
+>>>>>>> Question3
 #include "commande.h"
 
 
@@ -18,12 +22,26 @@ public:
 	void displayProduit();
 	void displayProduitChoisi(string prod_s);
 	int findProduct(string prod_s);
-	void modifQuantite(string prod_s, int newQuantite);
+	bool modifQuantite(string prod_s, int newQuantite);
+	void addClient(client *cli);
+	void displayClient();
+	void displayClientChoisi(string nom);
+	void displayClientChoisi(int Id);
+	client findClient(int Id);
+	client findClient(string nom);
+	void addProduitClient(client clie, produit prod, int Quant);
+	void supProduitClient(client clie, produit prod);
+	int getQuantiteProdClient(client clie, produit prod);
+
 
 private:
 	int nb_produit;
 	vector<produit*> m_produit;
+<<<<<<< HEAD
 	//vector<client*> m_client;
+=======
+	vector<client*> m_client;
+>>>>>>> Question3
 	vector<commande*> m_commande;
 
 };

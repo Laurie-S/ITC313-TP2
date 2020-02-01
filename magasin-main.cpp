@@ -1,13 +1,11 @@
 #include <iostream>
 #include <string>
 #include "magasin.h"
+#include "client.h"
+#include "commande.h"
+#include "produit.h"
 
 using namespace std;
-
-/*ostream& operator << (ostream &output, produit prod1) {
-	output << prod1.getTitre() << " " << prod1.getDescr() << "        " << prod1.getQuantite() << "    " << prod1.getPrix() << "€" << endl;
-	return output; 
-}*/
 
 int main(){
 	magasin magasin1(0);
@@ -28,4 +26,38 @@ int main(){
 	magasin1.modifQuantite("PS4", 100);
 
 	magasin1.displayProduit();
+
+
+	client client1(1, "Dominique", "Ginhac");	
+	client client2(2, "Albert", "Camus");
+
+	magasin1.addClient(&client1);
+	magasin1.addClient(&client2);
+
+	magasin1.displayClientChoisi("Camus");
+	magasin1.displayClientChoisi(1);
+
+	cout << &client1 << endl;
+
+
+	magasin1.addProduitClient(client1, PS4, 50);
+	magasin1.displayProduit();
+
+	cout << (&client1) << endl;
+
+
+	magasin1.addProduitClient(client2, PS4, 12);
+	cout << (&client2) << endl;
+	magasin1.addProduitClient(client2, PS4, 5);
+	magasin1.addProduitClient(client2, PS3, -2);
+	magasin1.addProduitClient(client2, PS3, 2);
+	magasin1.addProduitClient(client2, PS3, 0);
+	magasin1.addProduitClient(client2, Switch, 18);
+	cout << (&client2) << endl;
+	magasin1.supProduitClient(client2, Switch);
+	cout << (&client2) << endl;
+	magasin1.supProduitClient(client2, PS4);
+	cout << (&client2) << endl;
+
+	magasin1.displayClient();
 }
