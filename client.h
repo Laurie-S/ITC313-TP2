@@ -19,6 +19,7 @@ public:
 	void videPanier();
 	void modifQuantitePanier(string nom_produit, int quantite);
 	void supPdtPanier(string nom_produit);
+	void setPanier(vector<produit> v);
 	
 	friend ostream& operator<<(ostream &flux, client *client1);
 

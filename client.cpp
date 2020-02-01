@@ -49,6 +49,12 @@ void client::modifQuantitePanier(string nom_produit, int quantite){
 		}
 	}
 }
+void client::setPanier(vector<produit> v){
+	for (int i = 0; i < v.size(); i++)
+	{
+		panier_achat.push_back(v.at(i));
+	}
+}
 
 ostream& operator<<(ostream &flux, client *client1){
 	//////////////////////////// pour la presentation

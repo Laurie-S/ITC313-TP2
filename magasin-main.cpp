@@ -85,4 +85,6 @@ magasin1.displayCommandes();
 
 magasin1.displayCommandeClient(client2);
 
+magasin1.sauvegarde();
+
 }

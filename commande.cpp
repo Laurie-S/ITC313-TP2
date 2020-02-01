@@ -33,6 +33,11 @@ produit commande::getProduit(int i){
 	return produit_.at(i);
 }
 
+vector<produit> commande::getPdtCom(){
+	return produit_;
+}
+
+
 ostream& operator << (ostream &out, commande *com1) {
 	int n;
 	client client1 = com1->getClient();

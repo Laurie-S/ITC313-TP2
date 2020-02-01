@@ -34,6 +34,7 @@ public:
 	void addCommande(commande *comm);
 	void displayCommandes();
 	void displayCommandeClient(client cli);
+	void sauvegarde();
 
 
 

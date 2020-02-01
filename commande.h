@@ -20,6 +20,7 @@ public:
 	client getClient();
 	void livre();
 	bool getStatus();
+	vector<produit> getPdtCom();
 
 	friend ostream& operator<<(ostream &out, commande *com1);
 

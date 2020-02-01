@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <fstream>
 #include "magasin.h"
 #include "produit.h"
 #include "client.h"
@@ -312,4 +313,64 @@ void magasin::displayCommandeClient(client cli){
 			cout << m_commande.at(i);
 		}
 	}		
+}
+
+void magasin::sauvegarde(){
+	string a = "magasin.txt";
+	remove("magasin.txt");
+
+	ofstream save(a, ios::app); // on ouvre le fichier
+	if (save){ // si on a reussi a l'ouvrir
+		cout << "Sauvegarde en cours" << endl; // informe l'utilisateur
+		save << m_produit.size() << endl;
+		for (int i = 0; i < m_produit.size(); i++){
+			save<<m_produit.at(i)->getTitre()<<",";
+			save<<m_produit.at(i)->getDescr()<<",";
+			save<<m_produit.at(i)->getQuantite()<<",";
+			save<<m_produit.at(i)->getPrix()<<";"<<endl;
+		}
+		save << "/" << endl;
+		save << m_client.size() << endl;
+		for (int i = 0; i < m_client.size(); i++){
+			save<<m_client.at(i)->getId()<<",";
+			save<<m_client.at(i)->getNom()<<",";
+			save<<m_client.at(i)->getPrenom()<<",";
+			vector<produit> v = m_client.at(i)->getPanier();
+			save << v.size()<<",";
+			for (int j = 0; j < v.size(); j++){
+				save<<(v.at(i)).getTitre()<<",";
+				save<<(v.at(i)).getDescr()<<",";
+				save<<(v.at(i)).getQuantite()<<",";
+				save<<(v.at(i)).getPrix()<<";";
+			}
+			save << endl;
+		}
+
+		save << "/" << endl;
+		save << m_commande.size() << endl;
+		for (int i = 0; i < m_commande.size(); i++){
+			save<<m_commande.at(i)->getStatus()<<",";
+			save<<(m_commande.at(i)->getClient()).getId()<<",";
+			save<<(m_commande.at(i)->getClient()).getNom()<<",";
+			save<<(m_commande.at(i)->getClient()).getPrenom()<<",";
+
+			vector<produit> v = m_commande.at(i)->getPdtCom();
+			save << v.size()<<",";
+			for (int j = 0; j < v.size(); j++){
+				save<<(v.at(i)).getTitre()<<",";
+				save<<(v.at(i)).getDescr()<<",";
+				save<<(v.at(i)).getQuantite()<<",";
+				save<<(v.at(i)).getPrix()<<",";
+			}
+			save << endl;
+		}
+
+		save << endl; // on revient a la ligne dans le fichier
+		save.close(); // on ferme le fichier 
+		cout << "Sauvegarde réussie" << endl;
+	}
+	
+	else{
+		cout << "Echec de la Sauvegarde" << endl;  //on informe que la sauvegarde n'as pas marché
+	}
 }
