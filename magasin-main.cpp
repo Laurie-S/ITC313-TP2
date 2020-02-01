@@ -78,10 +78,11 @@ vector<produit> v;
 
 commande AAA(client2,v);
 	magasin1.validerCommande(client2,&AAA);
-	magasin1.livre(&client2);
 
 	cout <<&AAA;
 	
 magasin1.displayCommandes();
+
+magasin1.displayCommandeClient(client2);
 
 }

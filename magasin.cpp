@@ -286,6 +286,7 @@ void magasin::livre(client *cli){
 			if(m_commande.at(i)->getStatus()==false){
 				m_commande.at(i)->livre();
 				cout << "Commande livre avec succes " << endl;
+				i = 1+m_commande.size();
 			}
 		}
 	}
@@ -298,4 +299,17 @@ void magasin::displayCommandes(){
 	{
 		cout << m_commande.at(i);
 	}
+}
+
+
+void magasin::displayCommandeClient(client cli){
+	cout << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl;
+	cout << "AFFICHAGE DES COMMANDES DU CLIENT" << endl;
+	for (int i = 0; i < m_commande.size(); ++i)
+	{
+		client cli2 = m_commande.at(i)->getClient();
+		if(cli2.getId()==cli.getId()){
+			cout << m_commande.at(i);
+		}
+	}		
 }

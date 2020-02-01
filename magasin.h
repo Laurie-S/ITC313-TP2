@@ -33,6 +33,8 @@ public:
 	void livre(client *cli);
 	void addCommande(commande *comm);
 	void displayCommandes();
+	void displayCommandeClient(client cli);
+
 
 
 private:
