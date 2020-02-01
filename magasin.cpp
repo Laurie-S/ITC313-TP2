@@ -327,7 +327,7 @@ void magasin::sauvegarde(){
 			save<<m_produit.at(i)->getTitre()<<",";
 			save<<m_produit.at(i)->getDescr()<<",";
 			save<<m_produit.at(i)->getQuantite()<<",";
-			save<<m_produit.at(i)->getPrix()<<";"<<endl;
+			save<<m_produit.at(i)->getPrix()<<",;"<<endl;
 		}
 		save << "/" << endl;
 		save << m_client.size() << endl;
@@ -341,7 +341,7 @@ void magasin::sauvegarde(){
 				save<<(v.at(i)).getTitre()<<",";
 				save<<(v.at(i)).getDescr()<<",";
 				save<<(v.at(i)).getQuantite()<<",";
-				save<<(v.at(i)).getPrix()<<";";
+				save<<(v.at(i)).getPrix()<<",;/";
 			}
 			save << endl;
 		}
@@ -360,7 +360,7 @@ void magasin::sauvegarde(){
 				save<<(v.at(i)).getTitre()<<",";
 				save<<(v.at(i)).getDescr()<<",";
 				save<<(v.at(i)).getQuantite()<<",";
-				save<<(v.at(i)).getPrix()<<",";
+				save<<(v.at(i)).getPrix()<<",;/";
 			}
 			save << endl;
 		}
